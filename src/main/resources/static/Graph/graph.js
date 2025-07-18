@@ -86,68 +86,21 @@ function drawEdges() {
     container.appendChild(line);
   }
 }
-
-//async function startTraversal() {
-//    const selectedAlgo = document.getElementById('algorithm').value;
-//    const speed = document.getElementById('speedSlider').value;
-//    const startNode = 0;
-//
-//    try {
-//        const response = await fetch(`http://localhost:8080/api/graph/${selectedAlgo}?start=${startNode}`);
-//        const traversal = await response.json();
-//
-//        if (!traversal || !Array.isArray(traversal)) {
-//            document.getElementById('outputBox').innerText = "Traversal failed. Check backend or input.";
-//            return;
-//        }
-//
-//        console.log("Traversal Output:", traversal);
-//        document.getElementById('outputBox').innerText = "Traversal Output: " + traversal.join(" → ");
-//
-//        // Optional animation: highlight nodes
-//        for (let i = 0; i < traversal.length; i++) {
-//            const nodeId = traversal[i];
-//            const nodeEl = [...document.querySelectorAll('.node')].find(n => n.innerText === String(nodeId));
-//            if (nodeEl) {
-//                nodeEl.classList.add("highlight");
-//                await new Promise(resolve => setTimeout(resolve, speed));
-//            }
-//        }
-//    } catch (error) {
-//        console.error("Error during traversal:", error);
-//        document.getElementById('outputBox').innerText = "Traversal failed. Check backend or input.";
-//    }
-//}
-
-
-
-
-
-
 async function startTraversal() {
     const selectedAlgo = document.getElementById('algorithm').value;
     const speed = parseInt(document.getElementById('speedSlider').value);
-    //const startNode = parseInt(document.getElementById('startNode')?.value || 0);
+   
 const startNodeInput = document.getElementById('startNode')?.value.trim();
-
-// Check if input is empty or not a valid number
 if (!startNodeInput || isNaN(startNodeInput)) {
   alert("Please enter a valid start node.");
   return;
 }
-
 const startNode = parseInt(startNodeInput);
-
-// Check if node exists in the graph
 if (!nodes.has(startNode)) {
   alert(`Start node ${startNode} not found in the graph.`);
   return;
 }
-
-
-
-
-    try {
+   try {
         const response = await fetch(`http://localhost:8080/api/graph/${selectedAlgo}?start=${startNode}`);
         const traversal = await response.json();
 
@@ -168,8 +121,6 @@ if (!nodes.has(startNode)) {
                 nodeEl.classList.remove("highlight");
                 nodeEl.classList.add("visited");
             }
-
-            // Update text output dynamically
             const currentOutput = document.getElementById('outputBox').innerText;
             document.getElementById('outputBox').innerText = currentOutput + (i === 0 ? "" : " → ") + nodeId;
         }
@@ -179,14 +130,6 @@ if (!nodes.has(startNode)) {
         document.getElementById('outputBox').innerText = "Traversal failed. Check backend or input.";
     }
 }
-
-
-
-
-
-
-
-
 function showTraversalOutput(traversal) {
     const outputBox = document.getElementById("outputBox");
     outputBox.textContent = "Traversal Output: " + traversal.join(" → ");
