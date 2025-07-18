@@ -80,8 +80,6 @@ function runAlgorithm() {
     alert("Invalid input format. Use format like: [4,2,5]");
     return;
   }
-
-  // Determine if it’s a search or sort
   const type = algoTypeMap[algoName];
   if (type === "search") {
     const target = parseInt(prompt("Enter target element to search:"));
@@ -106,8 +104,8 @@ function runAlgorithm() {
           const arr = step.array;
           const highlight = [];
 
-          if ("currentIndex" in step) highlight.push(step.currentIndex); // linear
-          else if ("mid" in step) highlight.push(step.mid); // binary
+          if ("currentIndex" in step) highlight.push(step.currentIndex);
+          else if ("mid" in step) highlight.push(step.mid); 
 
           return { array: arr, highlight, found: step.found };
         });
@@ -188,8 +186,7 @@ function animateStepsSearch() {
     if (found) {
       const index = highlight[0];
       document.getElementById("output").innerText = `✅ Found = true, Index = ${index}`;
-      clearInterval(animationInterval); // Stop further animation
-    } else {
+      clearInterval(animationInterval);
       if (currentStep === steps.length - 1) {
         document.getElementById("output").innerText = `❌ Found = false`;
       } else {
@@ -210,26 +207,25 @@ function drawStep(step, highlightIndices = []) {
   const values = step;
   const maxVal = Math.max(...values.map((v) => (typeof v === "number" ? v : 1)));
 
-  // 👉 Set minimum bar width depending on array size
+  
   const barWidth = values.length <= 20 ? 40 : values.length <= 40 ? 25 : 15;
 
   values.forEach((val, idx) => {
     const wrapper = document.createElement("div");
     wrapper.className = "bar-wrapper";
-    wrapper.style.width = `${barWidth}px`; // 👈 Fixed width for consistent visual
+    wrapper.style.width = `${barWidth}px`; 
 
     const bar = document.createElement("div");
     bar.className = "bar";
 
-    // 👇 Make bars taller even for small numbers
+ 
     const normalizedHeight = Math.max(10, (parseInt(val) / maxVal) * 90);
     bar.style.height = `${normalizedHeight}%`;
 
-    // 📏 Large numbers = slightly larger font
     bar.style.fontSize = `${Math.max(14, normalizedHeight * 0.3)}px`;
     bar.innerText = val;
 
-    // 🎨 Color gradient
+
     const percentage = parseInt(val) / maxVal;
     const hue = 220 - percentage * 120;
     const lightness = document.body.classList.contains("dark") ? 60 : 70;
@@ -239,7 +235,7 @@ function drawStep(step, highlightIndices = []) {
     bar.style.fontWeight = "bold";
     bar.style.transition = "height 0.3s ease, transform 0.5s ease";
 
-    // ✨ Highlighted bars grow slightly
+
     if (highlightIndices.includes(idx)) {
       bar.style.transform = "scale(1.1)";
       bar.style.boxShadow = "0 0 10px rgba(0,0,0,0.5)";
@@ -249,7 +245,7 @@ function drawStep(step, highlightIndices = []) {
     container.appendChild(wrapper);
   });
 
-  // 🔄 Animate swap
+
   if (highlightIndices.length === 2) {
     const bars = container.querySelectorAll(".bar");
     const [i, j] = highlightIndices;
@@ -257,7 +253,7 @@ function drawStep(step, highlightIndices = []) {
     const bar1 = bars[i];
     const bar2 = bars[j];
 
-    const distance = (j - i) * (bar1.offsetWidth + 4); // +4 for spacing
+    const distance = (j - i) * (bar1.offsetWidth + 4); 
 
     bar1.style.position = "relative";
     bar2.style.position = "relative";
