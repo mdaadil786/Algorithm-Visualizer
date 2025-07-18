@@ -71,7 +71,7 @@ DFS (Depth-First Search)
 <img width="1918" height="816" alt="image" src="https://github.com/user-attachments/assets/d4e1a969-9a1a-457a-94ea-a0bd169b25b9" />
 
 ## 🎬 Demo Video
-[▶️ Click to watch demo](file:///C:/Users/aadil/Videos/Captures/%F0%9F%93%9A%20Algorithms%20to%20Visualize%20-%20Google%20Chrome%202025-07-18%2021-08-50.mp4)
+[▶️ Click to watch file:///C:/Users/aadil/Videos/Captures/%F0%9F%93%9A%20Algorithms%20to%20Visualize%20-%20Google%20Chrome%202025-07-18%2021-08-50.mp4demo](file:///C:/Users/aadil/Videos/Captures/%F0%9F%93%9A%20Algorithms%20to%20Visualize%20-%20Google%20Chrome%202025-07-18%2021-08-50.mp4)
 
 
 ## 🙌 Contribution
