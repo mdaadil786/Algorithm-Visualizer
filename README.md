@@ -31,7 +31,7 @@ Quick Sort
 Heap Sort
 
  ## 🔍Searching Algorithms
-Understand basic and advanced searching algorithms:
+Understand searching algorithms:
 
 Linear Search
 
@@ -42,11 +42,9 @@ Interactive tree structure visualizations:
 
 Binary Search Tree (BST) Insertion, Deletion, Search
 
-Tree Traversals: Inorder, Preorder, Postorder
+Tree Traversals: Inorder, Preorder, Postorder,Level Order
 
 AVL Tree (optional)
-
-Height, Depth calculation
 
 ## 📈 Graph Algorithms
 Step-by-step graph traversal animations:
