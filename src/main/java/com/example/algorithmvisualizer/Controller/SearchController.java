@@ -20,14 +20,8 @@ public class SearchController {
     public List<Map<String, Object>> linearSearch(@RequestBody SearchRequest request) {
         return searchingService.linearSearch(request.getArray(), request.getTarget());
     }
-
-
-
-    // SearchController.java
-
         @PostMapping("/binary")
         public List<Map<String, Object>> binarySearch(@RequestBody SearchRequest request) {
-            // Optional: Validate input array is sorted
             if (request.getArray() == null || request.getArray().length == 0) {
                 throw new IllegalArgumentException("Array must not be empty");
             }
