@@ -34,7 +34,6 @@ input, select, button {
   overflow: hidden;
 }
 
-/* Node styles */
 .node {
   position: absolute;
   width: 30px;
@@ -49,7 +48,6 @@ input, select, button {
   transition: all 0.5s ease;
 }
 
-/* Edge styles */
 .edge-line {
   position: absolute;
   height: 2px;
