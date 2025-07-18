@@ -17,7 +17,7 @@ public class SortingService {
                     int temp = a[j];
                     a[j] = a[j + 1];
                     a[j + 1] = temp;
-                    steps.add(Arrays.copyOf(a, a.length)); // Save step
+                    steps.add(Arrays.copyOf(a, a.length)); 
                 }
             }
         }
