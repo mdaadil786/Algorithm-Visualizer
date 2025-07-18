@@ -7,7 +7,6 @@ import java.util.*;
 @Service
 public class SearchingService {
 
-    // Linear Search with steps (each step shows current index and if found)
     public List<Map<String, Object>> linearSearch(int[] arr, int target) {
         List<Map<String, Object>> steps = new ArrayList<>();
 
@@ -23,7 +22,6 @@ public class SearchingService {
 
         return steps;
     }
-    // SearchingService.java
         public List<Map<String, Object>> binarySearch(int[] arr, int target) {
             List<Map<String, Object>> steps = new ArrayList<>();
             int left = 0, right = arr.length - 1;
