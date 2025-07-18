@@ -13,7 +13,6 @@ public class GraphController {
     private final GraphService graphService = new GraphService();
 
     public GraphController() {
-        // graphService.buildSampleGraph(); // REMOVE THIS
     }
 
     @PostMapping("/build")
