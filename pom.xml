@@ -23,13 +23,11 @@
 	</properties>
 
 	<dependencies>
-		<!-- RESTful Web API -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- Lombok (optional) -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -37,13 +35,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Jackson (optional) -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
-		<!-- For Testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
