@@ -4,16 +4,13 @@ import java.util.*;
 
 public class GraphService {
 
-    // Adjacency list graph representation
     private final Map<Integer, List<Integer>> graph = new HashMap<>();
 
-    // Add a single edge (undirected)
     public void addEdge(int u, int v) {
         graph.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
-        graph.computeIfAbsent(v, k -> new ArrayList<>()).add(u); // Undirected
+        graph.computeIfAbsent(v, k -> new ArrayList<>()).add(u); 
     }
 
-    // Add multiple edges (used by controller)
     public void buildGraph(List<List<Integer>> edges) {
         graph.clear();
         for (List<Integer> edge : edges) {
@@ -23,7 +20,6 @@ public class GraphService {
         }
     }
 
-    // BFS Traversal
     public List<Integer> bfs(int start) {
         List<Integer> result = new ArrayList<>();
         Set<Integer> visited = new HashSet<>();
@@ -46,7 +42,6 @@ public class GraphService {
         return result;
     }
 
-    // DFS Traversal
     public List<Integer> dfs(int start) {
         List<Integer> result = new ArrayList<>();
         Set<Integer> visited = new HashSet<>();
@@ -64,8 +59,6 @@ public class GraphService {
             }
         }
     }
-
-    // Optional: Build a default sample graph
     public void buildSampleGraph() {
         graph.clear();
         addEdge(0, 1);
