@@ -81,9 +81,8 @@ function renderTree() {
 
     const nodes = traverse(treeData, 0, 400);
 
-    // Draw edges (from center to center of each circle)
     nodes.forEach(({ node, x, y }) => {
-        const nodeRadius = 25; // Half of .node width/height (50px)
+        const nodeRadius = 25;
 
         if (node.left) {
             const child = nodes.find(n => n.node === node.left);
@@ -107,8 +106,6 @@ function renderTree() {
             svg.appendChild(line);
         }
     });
-
-    // Draw nodes
     nodes.forEach(({ node, x, y }) => {
         const div = document.createElement("div");
         div.className = "node";
