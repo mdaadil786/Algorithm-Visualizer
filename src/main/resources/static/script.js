@@ -10,12 +10,9 @@ function toggleSubtopics(topicElement, id) {
     topicElement.classList.add('active');
   }
 }
-
 function goToAlgo(algo) {
   window.location.href = `algorithm.html?algo=${algo}`;
 }
-
-// 🌙 Dark Mode
 window.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("darkModeToggle");
   const body = document.body;
