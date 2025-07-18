@@ -35,11 +35,9 @@ function animateTreeBuild() {
   const maxX = Math.max(...treeSteps.map((step) => step.x));
   const maxY = Math.max(...treeSteps.map((step) => step.y));
 
-  // Set enough size for container
   container.style.minWidth = `${maxX + 200}px`;
   container.style.height = `${maxY + 200}px`;
 
-  // Set enough size for SVG too!
   svg.setAttribute("width", `${maxX + 200}`);
   svg.setAttribute("height", `${maxY + 200}`);
 
@@ -60,7 +58,6 @@ function animateTreeBuild() {
 
   function next() {
     if (currentStep >= treeSteps.length) {
-      // ✅ Center scroll AFTER nodes are placed
       setTimeout(() => {
         container.scrollTop = container.scrollHeight / 2 - container.clientHeight / 2;
         container.scrollLeft = container.scrollWidth / 2 - container.clientWidth / 2;
@@ -70,7 +67,7 @@ function animateTreeBuild() {
 
     placeNode(treeSteps[currentStep]);
     currentStep++;
-    setTimeout(next, 400); // Smooth delay
+    setTimeout(next, 400); 
   }
 
   next();
